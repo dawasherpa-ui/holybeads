@@ -5,7 +5,7 @@ import { AxiosInstance } from "../(repositories)/config";
 import axios from "axios";
 export default async function Page() {
   let banners: any;
-  const response = await axios.get(process.env.NEXT_PUBLIC_URL_API+"/api/hero-banners", {
+  const response = await axios.get(process.env.NEXT_PUBLIC_URL_API+"/hero-banners", {
     params: {
       category: "",
     },
