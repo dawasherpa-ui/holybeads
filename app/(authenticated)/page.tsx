@@ -5,7 +5,7 @@ import { AxiosInstance } from "../(repositories)/config";
 import axios from "axios";
 export default async function Page() {
   let banners: any;
-  const response = await axios.get("http://localhost:3000/api?url=https://jkhecommerce.webxnep.com/api/hero-banners", {
+  const response = await axios.get(process.env.NEXT_PUBLIC_URL_API+"/api/hero-banners", {
     params: {
       category: "",
     },
