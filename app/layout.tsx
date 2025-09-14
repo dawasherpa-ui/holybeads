@@ -3,6 +3,7 @@ import { Lato } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { GlobalContextProvider } from "./context/GLobalContext";
+import { Suspense } from "react";
 
 const lato = Lato({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
+        <Suspense>
         <GlobalContextProvider>{children}</GlobalContextProvider>
+        </Suspense>
         <Toaster />
       </body>
     </html>
