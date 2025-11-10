@@ -20,7 +20,7 @@ export default function HeroCarousel({ banners }: any) {
       opts={{ loop: true }}
       plugins={[
         Autoplay({
-          delay: 3000,
+          delay: 10000,
         }),
         // OPTIONS
       ]}

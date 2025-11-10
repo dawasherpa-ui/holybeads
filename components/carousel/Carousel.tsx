@@ -8,13 +8,21 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-export default function Carousel({ children }: { children: React.ReactNode }) {
+interface CarouselProps {
+  children: React.ReactNode
+  swiperRef?: React.MutableRefObject<any>
+}
+
+export default function Carousel({ children, swiperRef }: CarouselProps) {
   return (
     <Swiper
+      ref={swiperRef}
+      className="overflow-visible"
+      style={{ overflow: 'visible' }}
       modules={[Pagination, Navigation]}
       spaceBetween={30}
       slidesPerView={'auto'}
-      pagination={{ clickable: true }}
+      pagination={false}
       navigation={false}
       breakpoints={{
         0: {
@@ -36,7 +44,9 @@ export default function Carousel({ children }: { children: React.ReactNode }) {
       }}
     >
       {React.Children.map(children, (child, index) => (
-        <SwiperSlide key={index}>{child}</SwiperSlide>
+        <SwiperSlide key={index} className="!overflow-visible">
+          {child}
+        </SwiperSlide>
       ))}
     </Swiper>
   )

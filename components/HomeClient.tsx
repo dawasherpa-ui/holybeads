@@ -13,19 +13,19 @@ import Image from "next/image";
 
 function HomeClient() {
   const [isLoading2, setisLoading2] = useState<boolean>(false);
-  const [brands, setBrands] = useState<any>();
+  // const [brands, setBrands] = useState<any>();
 
-  useEffect(() => {
-    const fetchBrands = async () => {
-      try {
-        const res = await AxiosInstance.get("/brands");
-        setBrands(res?.data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchBrands();
-  }, []);
+  // useEffect(() => {
+  //   const fetchBrands = async () => {
+  //     try {
+  //       const res = await AxiosInstance.get("/brands");
+  //       setBrands(res?.data.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchBrands();
+  // }, []);
   useEffect(() => {
     const fetch = async () => {
       try {
@@ -218,7 +218,7 @@ function HomeClient() {
             </div>
           </div>
         )}
-        <div className=" mt-12">
+        {/* <div className=" mt-12">
           <p className=" text-3xl text-center font-semibold mb-8 text-primary-700/80">
             Available Brands
           </p>
@@ -294,7 +294,7 @@ function HomeClient() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
         <Testimonial />
       </div>
     </>
